@@ -1,0 +1,66 @@
+
+
+.main {
+    background-color: #495E57;
+    width: auto;
+    height: 400px;
+}
+
+.box-container {
+
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+
+.text-container {
+ margin: 80px;
+ font-family: markazi;
+ text-align: justify;
+}
+
+h1 {
+    color: #F4CE14;
+}
+h2 {
+    color:#EDEFEE;
+    margin-right: 100px;
+    margin-bottom: 40px;
+}
+p {
+    color:#EDEFEE;
+    font-size: 20px;
+    width: fit-content;
+    height: 40px;
+    font-family: 'Karla';
+}
+button {
+    width: 160px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    font-family: 'Markazi text';
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    background-color: #F4CE14;
+    cursor: pointer;
+
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-between;
+    margin: 60px;
+    width: 400px;
+    height: 380px;
+
+}
+
+.food-image {
+    width: 300px;
+    justify-items: self-end;
+    border-radius: 8px;
+    object-fit: cover;
+}

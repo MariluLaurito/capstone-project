@@ -1,0 +1,83 @@
+.about-section {
+    display: flex;
+    height: 500px;
+    width: auto;
+    padding: 40px;
+    background-color: #EDEFEE;
+  }
+
+  .about-content {
+
+    margin-right: 90px;
+    margin-left: 100px;
+  }
+
+  .about-title {
+    text-align: left;
+    font-family: 'Markazi Text';
+    font-size: 30px;
+    color: #F4CE14;
+  }
+
+  .about-subtitle {
+    color: #495E57;
+    margin-right: 100px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+   .about-description {
+    text-align: justify;
+    width: 600px;
+
+   }
+
+  .about-p {
+    margin-bottom: 10px;
+    font-family: 'Karla';
+    color:#333333;
+  }
+
+  .founders-section {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .founder-img {
+
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .founder {
+    margin: 0 -70px 0 10px;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  .founder-img:first-child {
+    z-index: 2;
+   height: 320px;
+   width: 270px;
+   margin-top: 200px;
+
+
+  }
+
+  .founder-img-:last-child {
+    margin-left: -50px;
+    margin-right: 50px;
+
+
+  }
+.founder-img-mario {
+    z-index: 1;
+    height: 320px;
+    width: 270px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+
+}

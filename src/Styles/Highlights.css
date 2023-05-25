@@ -1,0 +1,126 @@
+.highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #f2f2f2;
+  }
+
+  .special {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 60px;
+    height: 100px;
+    width: 1000px;
+  }
+  .special-title {
+    font-family: 'Markazi text';
+    font-weight: bold;
+    font-size: 28px;
+    color: #333333;
+    padding: 20px;
+  }
+
+  .special-button {
+    padding: 10px 20px;
+    width: 160px;
+    height: 40px;
+    font-family: 'Markazi text';
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #F4CE14;
+    color: #333333;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .order-button:hover {
+    width: 160px;
+    height: 40px;
+    margin-top: 20px;
+    font-family: 'Markazi text';
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    background-color: #F4CE14;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 300px;
+    height: 500px;
+  }
+
+  .card img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .card-title-price-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+    font-family: Markazi Text medium;
+    margin-bottom: 10px;
+    color:#333333
+  }
+
+  .card p.price {
+    font-size: 16px;
+    color: #EE9972;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 16px;
+    color: #333333;
+    text-align: justify;
+    margin: 20px;
+    font-family: 'Karla regular';
+  }
+
+
+ .card .delivery-container {
+    display: inline-flex;
+    align-items: center;
+    width: 200px;
+    height: 90px;
+    padding-top: 40px;
+    padding-right: 90px;
+}
+   .card p.order-delivery {
+    display: inline;
+    margin-right: 5px;
+    font-family: 'Karla';
+    font-weight: bolder;
+    color: #333333;
+    }
+
+   .card span.material-symbols-outlined {
+    margin-right: 5px;
+    margin-bottom: 10px;
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+
+    }
