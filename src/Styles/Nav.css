@@ -2,13 +2,7 @@
     /* Navigation styles */
   }
 
-  ul {
-    list-style-type: none;
-    display: flex;
-    gap: 16px;
-  }
-
-  li a {
+   a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -17,9 +11,13 @@
     margin-right: 100px;
     padding: 8px;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+
   }
 
-  .main-navbar li a:hover {
+   a:hover {
     background-color: #f0f0f0;
+  }
+
+  .main-navbar a:active {
+    color: #EE9972;
   }

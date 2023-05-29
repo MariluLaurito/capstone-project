@@ -4,6 +4,8 @@
  import pasta from '../Assets/icons_assets/Carbonara.jpg'
  import lemon from '../Assets/icons_assets/lemon dessert.jpg'
  import '../Styles/Highlights.css'
+import { Link } from 'react-router-dom'
+
 
 
  function Highlights() {
@@ -40,7 +42,7 @@
      <div className='highlights'>
         <div className='special'>
        <h1 className='special-title'>This Weeks Specials!</h1>
-       <button className='special-button'>Online Menu</button>
+       <Link to='order online'>Online Menu</Link>
        </div>
        <div className='card-container'>
        {cardData.map((card,index) =>(
@@ -61,7 +63,6 @@
 
        ))}
        </div>
-
      </div>
    )
  }

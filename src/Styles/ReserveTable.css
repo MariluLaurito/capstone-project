@@ -1,0 +1,16 @@
+
+
+
+.reserve-title {
+    margin: 80px;
+}
+
+.reserve-image {
+    display: flex;
+    gap: 50px;
+    width: 400px;
+    height: 400px;
+    margin-left: 60px;
+    margin-right: 60px;
+    justify-content: space-between;
+}
