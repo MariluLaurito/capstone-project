@@ -1,8 +1,19 @@
 
+.reserve-table {
+    background-color: #495E57;
+    height: 1400px;
 
+}
 
 .reserve-title {
-    margin: 80px;
+    margin-left: 40px;
+    padding-top: 30px;
+}
+
+.reserve-secondSub {
+    color: #EDEFEE;
+    margin-left: 600px;
+    margin-bottom: 60px;
 }
 
 .reserve-image {
@@ -14,3 +25,114 @@
     margin-right: 60px;
     justify-content: space-between;
 }
+
+
+/* Form style */
+.formContainer {
+    height: 500px;
+}
+
+.fieldWrapper {
+    display: flex;
+    gap: 50px;
+    padding-left: 200px;
+    padding-top: 40px;
+}
+
+ .labelDate, .labelTime {
+  padding: 0.5rem;
+    font-size: 20px;
+    font-family: "Markazi text";
+    color: #EDEFEE;
+ }
+
+  .fieldDate, .fieldTime{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin: 10px;
+    font-size: large;
+    font-family: 'Markazi text';
+  }
+
+/*NUmber of Diners*/
+.wrapper-numberDiners, .wrapper-occasion, .wrapper-seatingOption {
+    display: flex;
+    gap: 10px;
+    margin-left: 200px; 
+    
+  }
+
+ .label-seatingOption, .labelOutside, .labelInside {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: "Markazi text";
+    color: #EDEFEE;
+
+  }
+  .fieldNumberOfD, .fieldOccasion {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    height: 50px;
+    margin: 20px;
+    font-size: 20px;
+    font-family: "Markazi text";
+  }
+  
+
+  .outside-inside {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: -100px;
+
+  }
+
+  .radioOutside {
+    margin-left: 100px;
+  }
+
+  .radioInside {
+    margin-left: 112px;
+  }
+
+  .letsGo-btn {
+    margin-top: 30px;
+    margin-left: 600px;
+    width: 300px;
+    height: 40px;
+    font-family: 'Markazi text';
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    background-color: #F4CE14;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    
+  }
+  .letsGo-btn:hover {
+    background-color: #EDEFEE;
+  }
+
+
+  .wrapper-occasion {
+    position: relative;
+    display: inline-block;
+  }
+
+  .select-icon {
+    position: absolute;
+    top: 50%;
+    right:260px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .select-icon svg {
+    fill: #333; /* Customize icon color */
+  }
+  

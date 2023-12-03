@@ -34,17 +34,19 @@ p {
     height: 40px;
     font-family: 'Karla';
 }
- main button {
+  main a {
+    display: inline-block;
     width: 160px;
-    height: 40px;
-    font-size: 16px;
-    margin-top: 20px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 40px;
     font-family: 'Markazi text';
     font-weight: bold;
     border: none;
     border-radius: 2px;
     background-color: #F4CE14;
     cursor: pointer;
+    text-align: center;
 
 }
 

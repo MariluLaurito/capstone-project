@@ -1,0 +1,17 @@
+
+.booking-confirmed {
+    border: 1px solid #bcaeae87;
+    height: 481px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.booking__processed {
+    color: #333; 
+}

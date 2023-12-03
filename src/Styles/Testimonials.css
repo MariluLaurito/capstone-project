@@ -6,7 +6,9 @@
   .testimonial-header {
     font-family: 'Markazi Text';
     color: #F4CE14;
-    
+    margin-left: 100px;
+    padding-top: 40px;
+
   }
   
   .card-testimonial-container {
