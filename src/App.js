@@ -28,27 +28,33 @@ function App() {
     availableDiners: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   };
 
+  const [loading, setLoading] = React.useState(true);
   const [state, dispatch] = useReducer(reducer, initialState)
 
+useEffect (() => { 
 const initializeTimes = async() => {
   try{
     const today = new Date();
     const todayDate = today.toISOString().split('T')[0];
     const data = await fetchData(todayDate);
- 
     console.log('Fetched data:' , data);
 
+
+    if (data && data.availableTimes) {
     dispatch({ type: 'UPDATE_TIMES', payload: data.availableTimes })
+    }else {
+      console.error('Invalid data structure:', data);
+    }
 
   } catch(error) {
     console.error('Error initializing times', error)
+  } finally {
+    setLoading(false);
   }
 };
 
-
-useEffect( () => {
-  initializeTimes()
-}, []);
+  initializeTimes();
+}, [state, setLoading]);
 
 
 
@@ -64,7 +70,7 @@ const handleAvailableDiners =(newDiners) => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-    <Route exact path='/' element={<Main availableTimes={state.availableTimes}  availableDiners={state.availableDiners}/>} />
+    <Route path='/' element={<Main availableTimes={state.availableTimes}  availableDiners={state.availableDiners}/>} />
     <Route path='reserve' 
     element={<ReserveTable 
     availableTimes={state.availableTimes} 
@@ -74,7 +80,7 @@ const router = createBrowserRouter(
     <Route path='menu' element={<Highlights />} />
     <Route path='about' element={<About />} />
     <Route path='booking' element={<Booking />}/>
-    <Route path='confirmedBooking' element={<ConfirmedBooking />} />
+    <Route path='/confirmedBooking' element={<ConfirmedBooking />} />
     </Route>
 
   )

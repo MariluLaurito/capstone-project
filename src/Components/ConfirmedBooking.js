@@ -4,9 +4,9 @@ import '../Styles/ConfirmedBooking.css';
 
 function ConfirmedBooking() {
   return (
-    <div class="booking-confirmed">
+    <div className="booking-confirmed">
       <h1>Booking confirmed! </h1>
-      <h3 class="booking__processed">Your booking has been successfully processed. We will send you a confirmation email soon! </h3>
+      <h3 className="booking__processed">Your booking has been successfully processed. We will send you a confirmation email soon! </h3>
     </div>
   )
 }

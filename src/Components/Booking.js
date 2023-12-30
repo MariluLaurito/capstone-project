@@ -1,13 +1,12 @@
 import React from 'react';
 import {  useNavigate} from 'react-router-dom';
 import { useState } from 'react';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik, useFormikContext } from 'formik';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Booking.css';
 import ConfirmedBooking from './ConfirmedBooking';
-
 
 
 
@@ -22,58 +21,29 @@ const initialValues = {
 };
 
 function Booking() {
-  const navigate = useNavigate();
-  const [formValues, setFormValues] = React.useState(initialValues);
+const navigate = useNavigate();
+const [isSubmitted, setIsSubmitted] = useState(false);
 
 
-  const handleChange = (event) => {
-    const {name, value} = event.target;
-
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-  const handleBlur = (event) => {
-    const { name } = event.target;
-
-    setFieldTouched(name, true);
-  };
 
   const handleGoBack = () => {
     navigate(-1)
-  }
-  const handleGoFoward =() => {
-    navigate('/confirmedBooking')
-  }
-   const onSubmit = (values) => {
+  };
+  
+  const onSubmit = (values) => {
     console.log(values);
-    navigate('/confirmedBooking');
-    setFormValues(values);
+    setIsSubmitted(true);
    }
-// Define the submit form function
+  
   const submitForm = async (formData) => {
     try {
-      // Send the formData to your API or backend for processing
-      const response = await submitAPI(formData);
-
-      // Check if the response indicates a successful booking
-      if (response === true) {
-        // If successful, navigate to the booking confirmation page
+      setIsSubmitted(true);
         navigate('/confirmedBooking');
-      } else {
-        // Handle errors or display a message if the booking failed
-        console.error('Booking failed:', response);
-        // You can also show an error message to the user
-      }
-    } catch (error) {
+      } catch (error) {
       console.error('Error while submitting the form:', error);
-      // Handle any API request errors here
-      // You can also show an error message to the user
     }
   };
-
-
+  
     const validationSchema = Yup.object({
 
         firstName: Yup.string().required('First name is required'),
@@ -87,6 +57,7 @@ function Booking() {
 
 
   return (
+   
     <div className='booking'>
         <div>
             <button onClick={handleGoBack} className="back-button">
@@ -97,7 +68,8 @@ function Booking() {
       <h1>Little Lemon</h1>
       <h2>Chicago</h2>
       </div>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={submitForm}>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+        {({ handleChange, handleBlur, values }) => ( 
        <Form className='inputAndLabel-container'>
          <div>
             <label htmlFor='firstName' className='label'>*First name</label>
@@ -107,8 +79,9 @@ function Booking() {
             id="firstName" 
             name="firstName"
             className="field" 
-            value={formValues.firstName}
+            value={values.firstName}
             onChange={handleChange}
+            onBlur={handleBlur}
             />
            <ErrorMessage name="firstName" component="div" className='error-message' />
          </div>
@@ -119,7 +92,7 @@ function Booking() {
              id="lastName" 
              name="lastName" 
              className="field" 
-             value={formValues.lastName}
+             value={values.lastName}
              onChange={handleChange}/>
             <ErrorMessage name="lastName" component="div" className='error-message' />
          </div>
@@ -131,8 +104,10 @@ function Booking() {
            id="phoneNumber" 
            name="phoneNumber" 
            className="field" 
-           value={formValues.phoneNumber}
-           onChange={handleChange}/>
+           value={values.phoneNumber}
+           onChange={handleChange}
+           onBlur={handleBlur}
+           />
          <ErrorMessage name="phoneNumber" component="div"  className='error-message'/>
          </div>
          <div>
@@ -143,8 +118,9 @@ function Booking() {
            id="email"
             name="email"
             className="field" 
-            value={formValues.email}
-            onChange={handleChange}/>
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}/>
           <ErrorMessage name="email" component="div"  className='error-message'/>
          </div>
          <div>
@@ -155,8 +131,9 @@ function Booking() {
             id="password" 
             name="password" 
             className="field" 
-            value={formValues.password}
-            onChange={handleChange}/>
+            value={values.password}
+            onChange={handleChange}
+            onBlur={handleBlur}/>
             <ErrorMessage name="password" component="div"  className='error-message'/>
          </div>
          <div>
@@ -168,13 +145,16 @@ function Booking() {
             name="optional" 
             rows={7} 
             className="textarea" 
-            value={formValues.optional}
-            onChange={handleChange}/>
+            value={values.optional}
+            onChange={handleChange}
+            onBlur={handleBlur}/>
          </div>
          <div>
-            <button onClick={handleGoFoward} className='continue-btn' type="submit" >Continue</button>
+            <button onClick={submitForm} className='continue-btn' type="submit" aria-label='on Click'>Continue</button>
+            {isSubmitted && (<ConfirmedBooking />)} 
          </div>
        </Form>
+       )}
       </Formik>
     </div>
   )
